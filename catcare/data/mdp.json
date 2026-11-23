@@ -1,0 +1,153 @@
+{
+  "meta": {
+    "note_ru": "All numbers are illustrative assumptions for teaching MDP, not medical statistics.",
+    "step_hours": 6,
+    "gamma": 0.9,
+    "go_cost": 3,
+    "travel_penalty_per_hour": [
+      0.3,
+      0.6,
+      1.2
+    ]
+  },
+  "states": [
+    "stable",
+    "worse",
+    "critical"
+  ],
+  "states_ru": [
+    "Stable",
+    "Worse",
+    "Critical"
+  ],
+  "actions": [
+    "observe",
+    "go"
+  ],
+  "actions_ru": [
+    "Observe longer",
+    "Go to the clinic"
+  ],
+  "profiles": {
+    "green": {
+      "description_ru": "False alarm: resolves on its own",
+      "observe_transitions": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "observe_reward": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "go_benefit": [
+        0,
+        0,
+        0
+      ]
+    },
+    "yellow": {
+      "description_ru": "Non-urgent: cold or dental issues. Changes slowly.",
+      "observe_transitions": [
+        [
+          0.9,
+          0.1,
+          0.0
+        ],
+        [
+          0.0,
+          0.9,
+          0.1
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "observe_reward": [
+        0,
+        -2,
+        -6
+      ],
+      "go_benefit": [
+        4,
+        8,
+        9
+      ]
+    },
+    "orange": {
+      "description_ru": "Within a day: refusing food.",
+      "observe_transitions": [
+        [
+          0.7,
+          0.3,
+          0.0
+        ],
+        [
+          0.0,
+          0.6,
+          0.4
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "observe_reward": [
+        -1,
+        -4,
+        -8
+      ],
+      "go_benefit": [
+        11,
+        12,
+        9
+      ]
+    },
+    "red": {
+      "description_ru": "Urgent: inability to urinate or lily poisoning. Rapid deterioration.",
+      "observe_transitions": [
+        [
+          0.5,
+          0.5,
+          0.0
+        ],
+        [
+          0.0,
+          0.3,
+          0.7
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "observe_reward": [
+        -3,
+        -8,
+        -12
+      ],
+      "go_benefit": [
+        14,
+        14,
+        10
+      ]
+    }
+  }
+}

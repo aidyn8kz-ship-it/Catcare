@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "note_ru": "A simplified city map for planning a route to a clinic, not real streets.",
+    "minutes_per_cost": 5,
+    "legend_ru": {
+      ".": "road (cost 1)",
+      "#": "building or fence (blocked)",
+      "~": "traffic or construction (cost 3)"
+    }
+  },
+  "rows": [
+    "..........",
+    ".##.###.#.",
+    ".##...~...",
+    "....#.#.#.",
+    ".##.#.~...",
+    ".##...#.##",
+    "....#.....",
+    ".##.#.##.."
+  ],
+  "home": {
+    "x": 0,
+    "y": 3
+  },
+  "clinics": [
+    {
+      "id": "near",
+      "name_ru": "Nearby Clinic (8 AM–8 PM)",
+      "x": 3,
+      "y": 1,
+      "open_from": 8,
+      "open_to": 20,
+      "always_open": false
+    },
+    {
+      "id": "night",
+      "name_ru": "24-Hour Clinic",
+      "x": 9,
+      "y": 6,
+      "open_from": 0,
+      "open_to": 24,
+      "always_open": true
+    }
+  ]
+}

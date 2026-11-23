@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "title_ru": "Cat Safety Handbook",
+    "note_ru": "A short reference, not medical advice. If you suspect poisoning, call a veterinarian.",
+    "confidence_ru": {
+      "high": "well documented",
+      "general": "general veterinary guidance",
+      "limited": "limited cat-specific evidence"
+    }
+  },
+  "intro_ru": "Each well-handled case unlocks another page. Check this guide to learn what is and is not safe for cats.",
+  "preferred_page": {
+    "lily_poisoning": "lilies"
+  },
+  "items": [
+    {
+      "id": "onion_garlic",
+      "name_ru": "Onions and garlic",
+      "icon": "onion_garlic",
+      "confidence": "high",
+      "why_ru": "Onions, garlic, chives, leeks, and shallots can damage a cat’s red blood cells and cause anemia. Garlic is more potent than onion. Raw, cooked, and dried forms, including powders and sauces, are risky.",
+      "signs_ru": "Weakness, pale gums, rapid breathing, dark or reddish urine. Signs may take several days to appear.",
+      "tip_ru": "Call your veterinarian even if the cat seems fine.",
+      "sources": [
+        "https://www.royalcanin.com/us/cats/health-and-wellbeing/what-foods-are-toxic-for-my-cat",
+        "https://www.petmd.com/cat/emergency/poisoning-toxicity/e_ct_human_food_poisoning"
+      ]
+    },
+    {
+      "id": "chocolate",
+      "name_ru": "Chocolate and cocoa",
+      "icon": "chocolate",
+      "confidence": "high",
+      "why_ru": "Chocolate contains theobromine and caffeine, which cats process poorly. Darker chocolate and cocoa are more dangerous.",
+      "signs_ru": "Vomiting, agitation, rapid or irregular heartbeat, tremors, and seizures in severe cases.",
+      "tip_ru": "Do not offer even a little chocolate. Keep sweets out of reach.",
+      "sources": [
+        "https://agriculture.vic.gov.au/livestock-and-animals/animal-welfare-victoria/cats/health/human-foods-to-avoid-for-cats",
+        "https://www.petmd.com/cat/emergency/poisoning-toxicity/e_ct_human_food_poisoning"
+      ]
+    },
+    {
+      "id": "caffeine",
+      "name_ru": "Coffee, tea, and energy drinks",
+      "icon": "caffeine",
+      "confidence": "general",
+      "why_ru": "Caffeine is chemically related to the theobromine found in chocolate. It is present in coffee, tea, and energy drinks.",
+      "signs_ru": "Signs can resemble chocolate poisoning: vomiting, agitation, a fast heartbeat, and tremors.",
+      "tip_ru": "Never leave cups or cans where a cat can reach them.",
+      "sources": [
+        "https://www.royalcanin.com/us/cats/health-and-wellbeing/what-foods-are-toxic-for-my-cat",
+        "https://www.chewy.com/education/cat/food-and-nutrition/what-can-cats-not-eat"
+      ]
+    },
+    {
+      "id": "alcohol",
+      "name_ru": "Alcohol",
+      "icon": "alcohol",
+      "confidence": "general",
+      "why_ru": "Because cats are much smaller than humans, even a small amount of alcohol can be dangerous. Alcohol is also found in some desserts and raw dough.",
+      "signs_ru": "Lethargy, vomiting, unsteady walking, and breathing problems.",
+      "tip_ru": "If your cat licks or drinks alcohol, call a veterinarian immediately.",
+      "sources": [
+        "https://www.kinship.com/cat-nutrition/foods-toxic-to-cats",
+        "https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/poisons"
+      ]
+    },
+    {
+      "id": "xylitol",
+      "name_ru": "Xylitol",
+      "icon": "xylitol",
+      "confidence": "limited",
+      "why_ru": "This sweetener is used in gum, mints, and sugar-free sweets. It is known to be dangerous to dogs; evidence about cats is more limited, but some sources still list it as a concern.",
+      "signs_ru": "The effects in cats are less well studied, so do not wait for symptoms.",
+      "tip_ru": "Call a veterinarian if your cat eats gum or sugar-free candy.",
+      "sources": [
+        "https://www.chewy.com/education/cat/food-and-nutrition/what-can-cats-not-eat",
+        "https://www.kinship.com/cat-nutrition/foods-toxic-to-cats"
+      ]
+    },
+    {
+      "id": "raw_dough",
+      "name_ru": "Raw dough",
+      "icon": "raw_dough",
+      "confidence": "general",
+      "why_ru": "Raw yeast dough can expand in a warm stomach and ferment, creating alcohol. This may cause bloating, vomiting, and intoxication.",
+      "signs_ru": "A swollen abdomen, vomiting, lethargy, and unsteady walking.",
+      "tip_ru": "Keep raw dough where your cat cannot reach it.",
+      "sources": [
+        "https://www.kinship.com/cat-nutrition/foods-toxic-to-cats",
+        "https://www.chewy.com/education/cat/food-and-nutrition/what-can-cats-not-eat"
+      ]
+    },
+    {
+      "id": "grapes",
+      "name_ru": "Grapes and raisins",
+      "icon": "grapes",
+      "confidence": "limited",
+      "why_ru": "Grapes and raisins are dangerous to dogs. Evidence in cats is limited, but the ASPCA advises avoiding them.",
+      "signs_ru": "Vomiting and lethargy. Kidney problems are possible, although evidence in cats is limited.",
+      "tip_ru": "Avoid the risk and do not offer them.",
+      "sources": [
+        "https://cuteness.com/1695180/dont-give-cats-these-foods-will-regret",
+        "https://www.thedrakecenter.com/services/cats/blog/food-plants-and-household-items-can-be-harmful-cats"
+      ]
+    },
+    {
+      "id": "lilies",
+      "name_ru": "Lilies",
+      "icon": "lilies",
+      "confidence": "high",
+      "why_ru": "Any part of a true lily, including its pollen and even vase water, can cause acute kidney failure. Lilies are among the most dangerous plants for cats.",
+      "signs_ru": "Vomiting, drooling, loss of appetite, and lethargy. Kidney injury can begin within hours.",
+      "tip_ru": "Go to a veterinary clinic immediately. If you are unsure whether bouquet flowers are lilies, treat them as potentially dangerous.",
+      "sources": [
+        "https://www.petmd.com/cat/conditions/digestive/c_ct_lily_poisoning",
+        "https://bluepearlvet.com/?p=98974",
+        "https://www.vet.cornell.edu/node/4041"
+      ]
+    }
+  ],
+  "emergency": {
+    "title_ru": "If your cat eats something toxic",
+    "steps_ru": [
+      "Do not wait for symptoms; some poisons have delayed effects.",
+      "Call a veterinarian or clinic and explain what the cat ate, how much, and when.",
+      "Do not induce vomiting unless a veterinarian tells you to.",
+      "Bring the packaging or a sample of the plant."
+    ]
+  }
+}

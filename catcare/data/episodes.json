@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "note_ru": "Episode outcome texts. Facts are based on veterinary references from diseases.json; the stories are fictional."
+  },
+  "severity_ru": [
+    "Acts almost normally, but something seems off.",
+    "Clearly worse: lethargic and hunched over.",
+    "Very ill: barely responsive."
+  ],
+  "conditions": {
+    "false_alarm": {
+      "unneeded_ru": "The vet examined the cat and found nothing wrong. The trip was unnecessary, but being cautious is better than being too late.",
+      "resolved_ru": "The cat is fine again. It was a false alarm, and you stayed calm.",
+      "fact_ru": "A single sneeze or hairball with normal appetite and behavior is usually not a reason to panic, but keep an eye on the cat."
+    },
+    "urinary": {
+      "great_ru": "You arrived in time. The veterinarian helped and the cat recovered quickly.",
+      "late_ru": "You arrived late. The cat needed to stay at the clinic for several days, but survived.",
+      "fact_ru": "A cat straining in the litter box without passing urine needs emergency care; without treatment, the condition can become life-threatening within a day."
+    },
+    "not_eating": {
+      "great_ru": "Just in time: the vet found the cause of the loss of appetite and the cat started eating again.",
+      "late_ru": "Too late: prolonged fasting required extended treatment, but the cat recovered.",
+      "fact_ru": "Cats that do not eat for more than 24 hours need veterinary attention because of the risk of hepatic lipidosis."
+    },
+    "respiratory": {
+      "great_ru": "The vet diagnosed a respiratory infection and prescribed treatment. The cat soon improved.",
+      "cautious_ru": "For a mild cold, observation may have been enough, but the vet visit provided reassurance.",
+      "late_ru": "The infection lasted too long. The cat almost stopped eating and needed a longer course of treatment.",
+      "fact_ru": "Feline respiratory infections are often viral. Seek urgent care for 24 hours without food, thick discharge, or open-mouth breathing."
+    },
+    "dental": {
+      "great_ru": "The vet found and treated a painful tooth. The cat can now eat comfortably.",
+      "cautious_ru": "Dental problems should be assessed by a veterinarian. You acted early, which was sensible.",
+      "late_ru": "Untreated tooth pain caused prolonged suffering, but the cat finally received help.",
+      "fact_ru": "Cats hide dental pain. They may drop food, have bad breath, or paw at their faces. Gum disease is common in adult cats."
+    },
+    "lily_poisoning": {
+      "great_ru": "You went straight to the clinic without waiting for symptoms, allowing treatment to begin early.",
+      "late_ru": "You arrived too late. The cat’s kidneys were already damaged and extended hospital treatment was necessary.",
+      "fact_ru": "Lilies are extremely dangerous to cats, even pollen and vase water. Do not wait for symptoms; treatment must begin immediately."
+    }
+  }
+}

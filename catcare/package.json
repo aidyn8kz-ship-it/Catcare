@@ -1,0 +1,14 @@
+{
+  "name": "catcare",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "start": "node tools/serve.mjs",
+    "build": "node tools/build.mjs",
+    "test": "node --test",
+    "demo:bayes": "node demos/bayes_demo.js",
+    "demo:mdp": "node demos/mdp_demo.js",
+    "demo:astar": "node demos/astar_demo.js"
+  },
+  "description": "CatCare: an educational cat care game (Bayes, MDP, A*)"
+}

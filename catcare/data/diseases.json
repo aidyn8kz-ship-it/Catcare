@@ -1,0 +1,341 @@
+{
+  "meta": {
+    "project": "CatCare",
+    "disclaimer_ru": "Educational model. Not a substitute for veterinary care. Disease facts are based on the listed sources; ALL probability values are illustrative assumptions for demonstrating Bayes’ theorem.",
+    "probabilities_are_assumptions": true,
+    "default_symptom_probability": 0.02
+  },
+  "symptoms": [
+    {
+      "id": "litter_frequent",
+      "text_ru": "Uses the litter box frequently",
+      "auto": true
+    },
+    {
+      "id": "straining_no_urine",
+      "text_ru": "Strains to urinate, with no urine or only drops",
+      "auto": false
+    },
+    {
+      "id": "vocalizing_litter",
+      "text_ru": "Cries or meows in the litter box",
+      "auto": false
+    },
+    {
+      "id": "licking_genital",
+      "text_ru": "Excessively licks the lower belly or rear",
+      "auto": false
+    },
+    {
+      "id": "not_eating",
+      "text_ru": "Eats little or nothing",
+      "auto": true
+    },
+    {
+      "id": "lethargy",
+      "text_ru": "Lethargic and moves very little",
+      "auto": true
+    },
+    {
+      "id": "hiding",
+      "text_ru": "Hides in unusual places",
+      "auto": true
+    },
+    {
+      "id": "vomiting",
+      "text_ru": "Vomiting",
+      "auto": false
+    },
+    {
+      "id": "sneezing",
+      "text_ru": "Sneezing",
+      "auto": true
+    },
+    {
+      "id": "eye_discharge",
+      "text_ru": "Eye discharge",
+      "auto": false
+    },
+    {
+      "id": "nasal_discharge",
+      "text_ru": "Nasal discharge",
+      "auto": false
+    },
+    {
+      "id": "open_mouth_breathing",
+      "text_ru": "Open-mouth breathing",
+      "auto": false
+    },
+    {
+      "id": "drooling",
+      "text_ru": "Drooling",
+      "auto": false
+    },
+    {
+      "id": "dropping_food",
+      "text_ru": "Drops food while eating",
+      "auto": false
+    },
+    {
+      "id": "bad_breath",
+      "text_ru": "Strong bad breath",
+      "auto": false
+    },
+    {
+      "id": "pawing_face",
+      "text_ru": "Rubs or paws at the face",
+      "auto": false
+    },
+    {
+      "id": "plant_chewed",
+      "text_ru": "A chewed plant nearby (lily)",
+      "auto": false
+    }
+  ],
+  "conditions": [
+    {
+      "id": "false_alarm",
+      "name_ru": "False alarm",
+      "urgency": "green",
+      "action_window_hours": null,
+      "prior": 0.4,
+      "notes_ru": "One sneeze or a hairball while the cat is otherwise eating, playing, and using the litter box normally. The right choice is to monitor.",
+      "symptom_probabilities": {
+        "sneezing": 0.3,
+        "vomiting": 0.1,
+        "hiding": 0.1,
+        "lethargy": 0.08,
+        "not_eating": 0.03
+      },
+      "sources": []
+    },
+    {
+      "id": "urinary",
+      "name_ru": "Urinary problems (including blockage)",
+      "urgency": "red",
+      "action_window_hours": 24,
+      "prior": 0.12,
+      "notes_ru": "Straining with no urine is an emergency. Complete blockage is more common in male cats, but lack of urine requires immediate care in any cat.",
+      "symptom_probabilities": {
+        "litter_frequent": 0.85,
+        "straining_no_urine": 0.7,
+        "vocalizing_litter": 0.6,
+        "licking_genital": 0.55,
+        "hiding": 0.4,
+        "lethargy": 0.35,
+        "vomiting": 0.25,
+        "not_eating": 0.3
+      },
+      "sources": [
+        "https://www.preventivevet.com/cats/what-to-do-if-your-cat-has-a-urinary-obstruction",
+        "https://www.mspca.org/clinical/urethral-obstruction-in-cats/",
+        "https://www.petmd.com/cat/conditions/urinary/urinary-tract-blockage-cats"
+      ]
+    },
+    {
+      "id": "not_eating",
+      "name_ru": "Refusing food (unknown cause)",
+      "urgency": "orange",
+      "action_window_hours": 24,
+      "prior": 0.12,
+      "notes_ru": "If a cat has not eaten for over 24 hours, seek veterinary care even if it appears normal (risk of hepatic lipidosis). At 24–48 hours, get same-day care; beyond 48 hours, treat it as an emergency. Kittens need attention sooner, around 12 hours.",
+      "symptom_probabilities": {
+        "not_eating": 0.95,
+        "lethargy": 0.6,
+        "hiding": 0.5,
+        "vomiting": 0.25,
+        "drooling": 0.05
+      },
+      "sources": [
+        "https://www.sydneyanimalhospitals.com.au/cat-not-eating-for-24-hours",
+        "https://vcahospitals.com/know-your-pet/signs-of-illness-in-cats",
+        "https://www.webvet.com/cat-not-eating/"
+      ]
+    },
+    {
+      "id": "respiratory",
+      "name_ru": "Respiratory infection (cat cold)",
+      "urgency": "yellow",
+      "action_window_hours": 72,
+      "prior": 0.14,
+      "notes_ru": "Often viral. Seek prompt veterinary care if the cat has not eaten for 24 hours, has thick discharge, or is breathing through its mouth.",
+      "symptom_probabilities": {
+        "sneezing": 0.9,
+        "nasal_discharge": 0.75,
+        "eye_discharge": 0.7,
+        "lethargy": 0.4,
+        "not_eating": 0.35,
+        "open_mouth_breathing": 0.05
+      },
+      "sources": [
+        "https://www.petsmart.com/learning-center/cat-care/cat-sneezing-why-it-happens-when-to-see-a-vet",
+        "https://www.chewy.com/education/cat/health-and-wellness/can-i-cure-my-cats-upper-respiratory-infections-myself"
+      ]
+    },
+    {
+      "id": "dental",
+      "name_ru": "Dental and gum problems",
+      "urgency": "yellow",
+      "action_window_hours": 120,
+      "prior": 0.12,
+      "notes_ru": "Cats hide dental pain. If the cat stops eating entirely, the 24-hour rule applies.",
+      "symptom_probabilities": {
+        "bad_breath": 0.7,
+        "dropping_food": 0.75,
+        "drooling": 0.6,
+        "pawing_face": 0.55,
+        "not_eating": 0.4,
+        "hiding": 0.2,
+        "vomiting": 0.1
+      },
+      "sources": [
+        "https://www.petmd.com/cat/conditions/mouth/c_ct_periodontal_disease",
+        "https://www.petmd.com/cat/slideshows/8-common-dental-problems-cats"
+      ]
+    },
+    {
+      "id": "lily_poisoning",
+      "name_ru": "Lily poisoning",
+      "urgency": "red",
+      "action_window_hours": 18,
+      "prior": 0.1,
+      "notes_ru": "Any part of a true lily, including pollen or vase water, is dangerous. Early signs include vomiting, drooling, loss of appetite, and lethargy. Vomiting may stop even while kidney injury progresses. Damage may start within 12–24 hours and kidney failure can follow within 24–72 hours. Immediate treatment is essential.",
+      "symptom_probabilities": {
+        "plant_chewed": 0.8,
+        "vomiting": 0.75,
+        "lethargy": 0.7,
+        "not_eating": 0.65,
+        "drooling": 0.5,
+        "hiding": 0.25
+      },
+      "sources": [
+        "https://www.petmd.com/cat/conditions/digestive/c_ct_lily_poisoning",
+        "https://bluepearlvet.com/?p=98974",
+        "https://www.vettimes.com/clinical/small-animal/lily-intoxication-in-cats",
+        "https://www.vet.cornell.edu/node/4041"
+      ]
+    }
+  ],
+  "red_flags": [
+    {
+      "id": "rf_urinary_blocked",
+      "when_ru": "Straining in the litter box with no urine",
+      "all_of": [
+        "straining_no_urine"
+      ],
+      "advice_ru": "Go to the clinic immediately. Do not wait."
+    },
+    {
+      "id": "rf_breathing",
+      "when_ru": "Open-mouth breathing",
+      "all_of": [
+        "open_mouth_breathing"
+      ],
+      "advice_ru": "Go to the clinic immediately."
+    },
+    {
+      "id": "rf_lily",
+      "when_ru": "Chewed a lily",
+      "all_of": [
+        "plant_chewed"
+      ],
+      "advice_ru": "Go to the clinic immediately, even without symptoms."
+    }
+  ],
+  "toxic_foods": [
+    {
+      "id": "onion_garlic",
+      "name_ru": "Onion, garlic, chives, leeks",
+      "note_ru": "Garlic is more potent than onion."
+    },
+    {
+      "id": "chocolate",
+      "name_ru": "Chocolate and cocoa",
+      "note_ru": "Dark chocolate and baking chocolate are especially dangerous."
+    },
+    {
+      "id": "caffeine",
+      "name_ru": "Coffee, tea, energy drinks",
+      "note_ru": ""
+    },
+    {
+      "id": "alcohol",
+      "name_ru": "Alcohol",
+      "note_ru": ""
+    },
+    {
+      "id": "xylitol",
+      "name_ru": "Xylitol (gum and sugar-free sweets)",
+      "note_ru": ""
+    },
+    {
+      "id": "raw_dough",
+      "name_ru": "Raw yeast dough",
+      "note_ru": ""
+    },
+    {
+      "id": "grapes",
+      "name_ru": "Grapes and raisins",
+      "note_ru": "Evidence in cats is limited, but the ASPCA advises avoiding them."
+    },
+    {
+      "id": "lilies",
+      "name_ru": "Lilies (not food, but extremely dangerous)",
+      "note_ru": "Every part, including pollen and vase water, is dangerous."
+    }
+  ],
+  "sources_general": [
+    "https://vcahospitals.com/know-your-pet/recognizing-signs-of-illness-in-cats",
+    "https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/poisons",
+    "https://www.kinship.com/cat-nutrition/foods-toxic-to-cats"
+  ],
+  "checks": [
+    {
+      "id": "litter",
+      "label_ru": "Observe the litter box",
+      "minutes": 15,
+      "symptoms": [
+        "straining_no_urine",
+        "vocalizing_litter"
+      ]
+    },
+    {
+      "id": "eating",
+      "label_ru": "Check the mouth and watch the cat eat",
+      "minutes": 15,
+      "symptoms": [
+        "dropping_food",
+        "drooling",
+        "pawing_face",
+        "bad_breath"
+      ]
+    },
+    {
+      "id": "breathing",
+      "label_ru": "Observe breathing, eyes, and nose",
+      "minutes": 15,
+      "symptoms": [
+        "open_mouth_breathing",
+        "eye_discharge",
+        "nasal_discharge"
+      ]
+    },
+    {
+      "id": "body",
+      "label_ru": "Examine the cat and the surrounding floor",
+      "minutes": 15,
+      "symptoms": [
+        "licking_genital",
+        "vomiting"
+      ]
+    },
+    {
+      "id": "plants",
+      "label_ru": "Check houseplants",
+      "minutes": 15,
+      "symptoms": [
+        "plant_chewed"
+      ]
+    }
+  ]
+}

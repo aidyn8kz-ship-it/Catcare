@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CatCare — Watch Your Cat</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- file-guard:start -->
+  <div id="fileWarning" role="alert" hidden style="max-width:980px;margin:12px auto;padding:14px 18px;background:#fff1cc;border:3px solid #c53a45;border-radius:12px;font:16px/1.45 system-ui,sans-serif;color:#3a2a22">
+    <b>The game could not start because index.html was opened as a local file.</b><br>
+    Your browser blocks some game assets when opened this way. Use one of these options:
+    <p style="margin:10px 0 6px"><a href="dist/catcare.html" style="display:inline-block;background:#c53a45;color:#fff;font-weight:800;text-decoration:none;padding:10px 16px;border-radius:8px">▶ Open the standalone game (dist/catcare.html)</a></p>
+    Or run <code>npm start</code> in the project folder, or right-click index.html in VS Code and choose "Open with Live Server".
+  </div>
+  <script>if (location.protocol === 'file:') document.getElementById('fileWarning').hidden = false;</script>
+  <!-- file-guard:end -->
+  <header class="top">
+    <h1>🐾 CatCare</h1>
+    <div class="clock" id="clock">Day 1, 08:00</div>
+  </header>
+
+  <div class="toolbar">
+    <button id="pauseBtn" type="button" class="tool pause-tool" disabled><span aria-hidden="true">⏸</span><span>Pause</span></button>
+    <button id="bookBtn" type="button" class="tool" aria-label="Open the Cat Safety Handbook">
+      <img src="assets/sprites/book_closed.png" alt="" width="20" height="24"><span>Book</span><i class="dot" id="bookDot" hidden></i>
+    </button>
+    <button id="trophyBtn" type="button" class="tool" aria-label="Achievements"><span aria-hidden="true">🏆</span><span>Achievements</span></button>
+    <button id="themeBtn" type="button" class="tool" aria-label="Switch color theme" aria-pressed="false"><span aria-hidden="true" id="themeIcon">🌙</span><span id="themeLabel">Dark Mode</span></button>
+    <button id="resetBtn" type="button" class="tool quiet"><span aria-hidden="true">↺</span><span>Start Over</span></button>
+  </div>
+  <p class="toast" id="toast" role="status" hidden></p>
+
+  <main>
+    <nav class="tabs" id="tabs" aria-label="Rooms"></nav>
+
+    <div class="stage">
+      <canvas id="screen" width="160" height="100" aria-label="The room where the cat lives"></canvas>
+    </div>
+
+    <p class="status" id="status"></p>
+
+    <div id="alertBar" class="alert" role="alert" hidden>
+      <span>Something is wrong with the cat.</span>
+      <button id="inspectBtn" type="button">❗ Inspect</button>
+    </div>
+
+    <label class="follow">
+      <input type="checkbox" id="follow" checked> Follow the cat (camera follows automatically)
+    </label>
+  </main>
+
+  <footer>
+    Educational simulation, not a substitute for veterinary care. Probabilities and rewards are illustrative assumptions.
+  </footer>
+
+  <dialog id="inspect" aria-label="Cat Examination"></dialog>
+  <dialog id="bookDlg" class="bookdlg" aria-label="Cat Safety Handbook"></dialog>
+  <dialog id="achDlg" aria-label="Achievements"></dialog>
+  <dialog id="confirmDlg" class="small" aria-label="Confirmation"></dialog>
+  <dialog id="pauseDlg" class="small" aria-labelledby="pauseTitle" aria-describedby="pauseDescription">
+    <div class="dlg-head"><h2 id="pauseTitle">Game Paused</h2></div>
+    <p id="pauseDescription">Game time has stopped. Your cat will stay in the same condition until you return.</p>
+    <p id="pauseSaveError" class="message" role="status" hidden>The browser could not save your game. Keep this tab open to preserve your progress.</p>
+    <div class="btnrow"><button id="resumeBtn" type="button" class="primary big">Resume Game</button></div>
+  </dialog>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
